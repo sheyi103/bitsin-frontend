@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[38],{586:function(n,e,t){"use strict";t.r(e);var c={components:{Dashscreen:t(530).default}},o=t(55),component=Object(o.a)(c,(function(){var n=this._self._c;return n("div",[n("div",{staticClass:"container font"},[n("div",[n("Dashscreen")],1)])])}),[],!1,null,"28deec18",null);e.default=component.exports}}]);

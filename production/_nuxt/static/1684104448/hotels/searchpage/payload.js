@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/hotels/searchpage", {data:[{}],fetch:{},mutations:[]});

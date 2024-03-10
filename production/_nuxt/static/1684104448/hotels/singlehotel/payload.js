@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/hotels/singlehotel", {data:[{}],fetch:{},mutations:[]});

@@ -1,0 +1,23 @@
+[
+  {
+    "image": "france.png",
+    "country": "France",
+    "city": "Paris",
+    "currencey": "Franc",
+    "price": "300"
+  },
+  {
+    "image": "uk.png",
+    "country": "United Kingdom",
+    "city": "London",
+    "currencey": "Pounds",
+    "price": "300"
+  },
+  {
+    "image": "singapore.png",
+    "country": "Singapore",
+    "city": "Yishun",
+    "currencey": "Sd",
+    "price": "300"
+  }
+]

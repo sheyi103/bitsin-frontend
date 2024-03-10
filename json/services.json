@@ -1,0 +1,7 @@
+[
+  { "list1": "Flights", "to": "/" },
+  { "list1": "Hotels", "to": "/" },
+  { "list1": "Visa", "to": "/" },
+  { "list1": "Deals", "to": "/" },
+  { "list1": "Packages", "to": "/" }
+]

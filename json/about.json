@@ -1,0 +1,7 @@
+[
+  { "list2": "About us", "to": "/about" },
+  { "list2": "Contact us", "to": "/contactus" },
+  { "list2": "Feedback", "to": "/" },
+  { "list2": "FAQ", "to": "/faq" },
+  { "list2": "Terms of use", "to": "/terms-condition" }
+]

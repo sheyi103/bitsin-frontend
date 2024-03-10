@@ -1,0 +1,7 @@
+[
+  { "nav": "About Us", "to": "/about" },
+  { "nav": "Visa Processing", "to": "/visa-processing" },
+  { "nav": "Booking/Enquiry", "to": "/booking-enquiry" },
+  { "nav": "Blog", "to": "/blog/blog" },
+  { "nav": "Contact Us", "to": "/contactus" }
+]

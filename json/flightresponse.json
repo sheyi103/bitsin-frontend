@@ -1,0 +1,582 @@
+{
+    "departure_port": "LOS",
+    "arrival_port": "ABV",
+    "departure_date": "2024-03-21",
+    "return_date": "",
+    "adult": 1,
+    "children": 0,
+    "infants": 0,
+    "flights": {
+        "SOAPBody": {
+            "airLowFareSearchRsp": {
+                "@attributes": {
+                    "TransactionId": "51807F870A0D6A933B395974A0766CBF",
+                    "ResponseTime": "285",
+                    "DistanceUnits": "MI",
+                    "CurrencyType": "NGN"
+                },
+                "airFlightDetailsList": {
+                    "airFlightDetails": [
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA8v82CAAAAA==",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T11:20:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T12:35:00.000+01:00",
+                                "FlightTime": "75",
+                                "TravelTime": "75",
+                                "Equipment": "CRJ"
+                            }
+                        },
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKANw82CAAAAA==",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T15:10:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T16:25:00.000+01:00",
+                                "FlightTime": "75",
+                                "TravelTime": "75",
+                                "Equipment": "CRJ"
+                            }
+                        },
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKATw82CAAAAA==",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T06:45:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T08:00:00.000+01:00",
+                                "FlightTime": "75",
+                                "TravelTime": "75",
+                                "Equipment": "CRJ"
+                            }
+                        }
+                    ]
+                },
+                "airAirSegmentList": {
+                    "airAirSegment": [
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA7v82CAAAAA==",
+                                "Group": "0",
+                                "Carrier": "X1",
+                                "FlightNumber": "63",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T11:20:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T12:35:00.000+01:00",
+                                "FlightTime": "75",
+                                "Distance": "314",
+                                "ETicketability": "Yes",
+                                "Equipment": "CRJ",
+                                "ChangeOfPlane": "false",
+                                "ParticipantLevel": "Secure Sell",
+                                "PolledAvailabilityOption": "No polled avail exists",
+                                "OptionalServicesIndicator": "false",
+                                "AvailabilitySource": "A",
+                                "AvailabilityDisplayType": "Fare Shop/Optimal Shop"
+                            },
+                            "airCodeshareInfo": "VALUEJET",
+                            "airAirAvailInfo": {
+                                "@attributes": {
+                                    "ProviderCode": "1G"
+                                }
+                            },
+                            "airFlightDetailsRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKA8v82CAAAAA=="
+                                }
+                            }
+                        },
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKAMw82CAAAAA==",
+                                "Group": "0",
+                                "Carrier": "X1",
+                                "FlightNumber": "65",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T15:10:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T16:25:00.000+01:00",
+                                "FlightTime": "75",
+                                "Distance": "314",
+                                "ETicketability": "Yes",
+                                "Equipment": "CRJ",
+                                "ChangeOfPlane": "false",
+                                "ParticipantLevel": "Secure Sell",
+                                "PolledAvailabilityOption": "No polled avail exists",
+                                "OptionalServicesIndicator": "false",
+                                "AvailabilitySource": "A",
+                                "AvailabilityDisplayType": "Fare Shop/Optimal Shop"
+                            },
+                            "airCodeshareInfo": "VALUEJET",
+                            "airAirAvailInfo": {
+                                "@attributes": {
+                                    "ProviderCode": "1G"
+                                }
+                            },
+                            "airFlightDetailsRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKANw82CAAAAA=="
+                                }
+                            }
+                        },
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKASw82CAAAAA==",
+                                "Group": "0",
+                                "Carrier": "X1",
+                                "FlightNumber": "61",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "DepartureTime": "2024-03-21T06:45:00.000+01:00",
+                                "ArrivalTime": "2024-03-21T08:00:00.000+01:00",
+                                "FlightTime": "75",
+                                "Distance": "314",
+                                "ETicketability": "Yes",
+                                "Equipment": "CRJ",
+                                "ChangeOfPlane": "false",
+                                "ParticipantLevel": "Secure Sell",
+                                "PolledAvailabilityOption": "No polled avail exists",
+                                "OptionalServicesIndicator": "false",
+                                "AvailabilitySource": "A",
+                                "AvailabilityDisplayType": "Fare Shop/Optimal Shop"
+                            },
+                            "airCodeshareInfo": "VALUEJET",
+                            "airAirAvailInfo": {
+                                "@attributes": {
+                                    "ProviderCode": "1G"
+                                }
+                            },
+                            "airFlightDetailsRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKATw82CAAAAA=="
+                                }
+                            }
+                        }
+                    ]
+                },
+                "airFareInfoList": {
+                    "airFareInfo": [
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKAEw82CAAAAA==",
+                                "FareBasis": "UOWVK",
+                                "PassengerTypeCode": "ADT",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "EffectiveDate": "2024-03-18T13:19:00.000+01:00",
+                                "DepartureDate": "2024-03-21",
+                                "Amount": "NGN75520",
+                                "NegotiatedFare": "false",
+                                "NotValidBefore": "2024-03-21",
+                                "NotValidAfter": "2024-03-21"
+                            },
+                            "airFareSurcharge": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAOw82CAAAAA==",
+                                    "Type": "Other",
+                                    "Amount": "USD9.00"
+                                }
+                            },
+                            "airBaggageAllowance": {
+                                "airNumberOfPieces": "1",
+                                "airMaxWeight": []
+                            },
+                            "airFareRuleKey": "gws-eJxNTssOgzAM+xjkuxNWlWOZCprEVA6MDi77/89YQjVpkRI7cV4pJaXe2MuQ/q3DpzsE+5aBAjUf7xWBJMSSE5Resa/vuqAtUK+XS2so3sUpzmKAKWRtkhvOKz7XzTSGIdJR4Gfh1CbwI9PDaBnz65C62CH1YpMYYV9+AeAkKrs=",
+                            "airBrand": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAfw82CAAAAA==",
+                                    "BrandFound": "false"
+                                }
+                            }
+                        },
+                        {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKAaw82CAAAAA==",
+                                "FareBasis": "QOWVK",
+                                "PassengerTypeCode": "ADT",
+                                "Origin": "LOS",
+                                "Destination": "ABV",
+                                "EffectiveDate": "2024-03-18T13:19:00.000+01:00",
+                                "DepartureDate": "2024-03-21",
+                                "Amount": "NGN121600",
+                                "NegotiatedFare": "false",
+                                "NotValidBefore": "2024-03-21",
+                                "NotValidAfter": "2024-03-21"
+                            },
+                            "airFareSurcharge": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAbw82CAAAAA==",
+                                    "Type": "Other",
+                                    "Amount": "USD9.00"
+                                }
+                            },
+                            "airBaggageAllowance": {
+                                "airNumberOfPieces": "1",
+                                "airMaxWeight": []
+                            },
+                            "airFareRuleKey": "gws-eJxNTssKg0AM/BiZexIfa2+r7BbBslJsV734/59h4lJoIJlJJi/vvZA0VHPv/63CWe2M7xqABFEfxoy+IwJrcoC4FryXLc8oC8Tq6dYKsnVRdE9WQGyDFMkMxx1fy6oaPRpHhgw7C6M6gR+Jk9I0hM/OedZDYsUikYN+eQHjVSrA",
+                            "airBrand": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAhw82CAAAAA==",
+                                    "BrandFound": "false"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "airRouteList": {
+                    "airRoute": {
+                        "@attributes": {
+                            "Key": "qpW/C5TqWDKAdw82CAAAAA=="
+                        },
+                        "airLeg": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA9v82CAAAAA==",
+                                "Group": "0",
+                                "Origin": "LOS",
+                                "Destination": "ABV"
+                            }
+                        }
+                    }
+                },
+                "airAirPricingSolution": [
+                    {
+                        "@attributes": {
+                            "Key": "qpW/C5TqWDKA6v82CAAAAA==",
+                            "TotalPrice": "NGN177008",
+                            "BasePrice": "USD59.00",
+                            "ApproximateTotalPrice": "NGN177008",
+                            "ApproximateBasePrice": "NGN75520",
+                            "EquivalentBasePrice": "NGN75520",
+                            "Taxes": "NGN101488",
+                            "ApproximateTaxes": "NGN101488"
+                        },
+                        "airJourney": {
+                            "@attributes": {
+                                "TravelTime": "P0DT1H15M0S"
+                            },
+                            "airAirSegmentRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKA7v82CAAAAA=="
+                                }
+                            }
+                        },
+                        "airLegRef": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA9v82CAAAAA=="
+                            }
+                        },
+                        "airAirPricingInfo": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA+v82CAAAAA==",
+                                "TotalPrice": "NGN177008",
+                                "BasePrice": "USD59.00",
+                                "ApproximateTotalPrice": "NGN177008",
+                                "ApproximateBasePrice": "NGN75520",
+                                "EquivalentBasePrice": "NGN75520",
+                                "Taxes": "NGN101488",
+                                "ApproximateTaxes": "NGN101488",
+                                "LatestTicketingTime": "2024-03-20T23:59:00.000+01:00",
+                                "PricingMethod": "Guaranteed",
+                                "ETicketability": "Yes",
+                                "PlatingCarrier": "X1",
+                                "ProviderCode": "1G",
+                                "Cat35Indicator": "false"
+                            },
+                            "airFareInfoRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAEw82CAAAAA=="
+                                }
+                            },
+                            "airBookingInfo": {
+                                "@attributes": {
+                                    "BookingCode": "U",
+                                    "BookingCount": "9",
+                                    "CabinClass": "Economy",
+                                    "FareInfoRef": "qpW/C5TqWDKAEw82CAAAAA==",
+                                    "SegmentRef": "qpW/C5TqWDKA7v82CAAAAA=="
+                                }
+                            },
+                            "airTaxInfo": [
+                                {
+                                    "@attributes": {
+                                        "Category": "JY",
+                                        "Amount": "NGN5664",
+                                        "Key": "qpW/C5TqWDKA/v82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "NG",
+                                        "Amount": "NGN8064",
+                                        "Key": "qpW/C5TqWDKAAw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "QT",
+                                        "Amount": "NGN2000",
+                                        "Key": "qpW/C5TqWDKABw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YQ",
+                                        "Amount": "NGN38400",
+                                        "Key": "qpW/C5TqWDKACw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YR",
+                                        "Amount": "NGN47360",
+                                        "Key": "qpW/C5TqWDKADw82CAAAAA=="
+                                    }
+                                }
+                            ],
+                            "airFareCalc": "LOS X1 ABV Q8.70 50.00UOWVK USD58.70END",
+                            "airPassengerType": {
+                                "@attributes": {
+                                    "Code": "ADT"
+                                }
+                            },
+                            "airChangePenalty": {
+                                "@attributes": {
+                                    "PenaltyApplies": "Anytime"
+                                },
+                                "airAmount": "NGN32000"
+                            }
+                        }
+                    },
+                    {
+                        "@attributes": {
+                            "Key": "qpW/C5TqWDKAQw82CAAAAA==",
+                            "TotalPrice": "NGN177008",
+                            "BasePrice": "USD59.00",
+                            "ApproximateTotalPrice": "NGN177008",
+                            "ApproximateBasePrice": "NGN75520",
+                            "EquivalentBasePrice": "NGN75520",
+                            "Taxes": "NGN101488",
+                            "ApproximateTaxes": "NGN101488"
+                        },
+                        "airJourney": {
+                            "@attributes": {
+                                "TravelTime": "P0DT1H15M0S"
+                            },
+                            "airAirSegmentRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAMw82CAAAAA=="
+                                }
+                            }
+                        },
+                        "airLegRef": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA9v82CAAAAA=="
+                            }
+                        },
+                        "airAirPricingInfo": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKAFw82CAAAAA==",
+                                "TotalPrice": "NGN177008",
+                                "BasePrice": "USD59.00",
+                                "ApproximateTotalPrice": "NGN177008",
+                                "ApproximateBasePrice": "NGN75520",
+                                "EquivalentBasePrice": "NGN75520",
+                                "Taxes": "NGN101488",
+                                "ApproximateTaxes": "NGN101488",
+                                "LatestTicketingTime": "2024-03-20T23:59:00.000+01:00",
+                                "PricingMethod": "Guaranteed",
+                                "ETicketability": "Yes",
+                                "PlatingCarrier": "X1",
+                                "ProviderCode": "1G",
+                                "Cat35Indicator": "false"
+                            },
+                            "airFareInfoRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAEw82CAAAAA=="
+                                }
+                            },
+                            "airBookingInfo": {
+                                "@attributes": {
+                                    "BookingCode": "U",
+                                    "BookingCount": "9",
+                                    "CabinClass": "Economy",
+                                    "FareInfoRef": "qpW/C5TqWDKAEw82CAAAAA==",
+                                    "SegmentRef": "qpW/C5TqWDKAMw82CAAAAA=="
+                                }
+                            },
+                            "airTaxInfo": [
+                                {
+                                    "@attributes": {
+                                        "Category": "JY",
+                                        "Amount": "NGN5664",
+                                        "Key": "qpW/C5TqWDKAGw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "NG",
+                                        "Amount": "NGN8064",
+                                        "Key": "qpW/C5TqWDKAHw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "QT",
+                                        "Amount": "NGN2000",
+                                        "Key": "qpW/C5TqWDKAIw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YQ",
+                                        "Amount": "NGN38400",
+                                        "Key": "qpW/C5TqWDKAJw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YR",
+                                        "Amount": "NGN47360",
+                                        "Key": "qpW/C5TqWDKAKw82CAAAAA=="
+                                    }
+                                }
+                            ],
+                            "airFareCalc": "LOS X1 ABV Q8.70 50.00UOWVK USD58.70END",
+                            "airPassengerType": {
+                                "@attributes": {
+                                    "Code": "ADT"
+                                }
+                            },
+                            "airChangePenalty": {
+                                "@attributes": {
+                                    "PenaltyApplies": "Anytime"
+                                },
+                                "airAmount": "NGN32000"
+                            }
+                        }
+                    },
+                    {
+                        "@attributes": {
+                            "Key": "qpW/C5TqWDKARw82CAAAAA==",
+                            "TotalPrice": "NGN228848",
+                            "BasePrice": "USD95.00",
+                            "ApproximateTotalPrice": "NGN228848",
+                            "ApproximateBasePrice": "NGN121600",
+                            "EquivalentBasePrice": "NGN121600",
+                            "Taxes": "NGN107248",
+                            "ApproximateTaxes": "NGN107248"
+                        },
+                        "airJourney": {
+                            "@attributes": {
+                                "TravelTime": "P0DT1H15M0S"
+                            },
+                            "airAirSegmentRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKASw82CAAAAA=="
+                                }
+                            }
+                        },
+                        "airLegRef": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKA9v82CAAAAA=="
+                            }
+                        },
+                        "airAirPricingInfo": {
+                            "@attributes": {
+                                "Key": "qpW/C5TqWDKAUw82CAAAAA==",
+                                "TotalPrice": "NGN228848",
+                                "BasePrice": "USD95.00",
+                                "ApproximateTotalPrice": "NGN228848",
+                                "ApproximateBasePrice": "NGN121600",
+                                "EquivalentBasePrice": "NGN121600",
+                                "Taxes": "NGN107248",
+                                "ApproximateTaxes": "NGN107248",
+                                "LatestTicketingTime": "2024-03-20T23:59:00.000+01:00",
+                                "PricingMethod": "Guaranteed",
+                                "Refundable": "true",
+                                "ETicketability": "Yes",
+                                "PlatingCarrier": "X1",
+                                "ProviderCode": "1G",
+                                "Cat35Indicator": "false"
+                            },
+                            "airFareInfoRef": {
+                                "@attributes": {
+                                    "Key": "qpW/C5TqWDKAaw82CAAAAA=="
+                                }
+                            },
+                            "airBookingInfo": {
+                                "@attributes": {
+                                    "BookingCode": "Q",
+                                    "BookingCount": "8",
+                                    "CabinClass": "Economy",
+                                    "FareInfoRef": "qpW/C5TqWDKAaw82CAAAAA==",
+                                    "SegmentRef": "qpW/C5TqWDKASw82CAAAAA=="
+                                }
+                            },
+                            "airTaxInfo": [
+                                {
+                                    "@attributes": {
+                                        "Category": "JY",
+                                        "Amount": "NGN9120",
+                                        "Key": "qpW/C5TqWDKAVw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "NG",
+                                        "Amount": "NGN10368",
+                                        "Key": "qpW/C5TqWDKAWw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "QT",
+                                        "Amount": "NGN2000",
+                                        "Key": "qpW/C5TqWDKAXw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YQ",
+                                        "Amount": "NGN38400",
+                                        "Key": "qpW/C5TqWDKAYw82CAAAAA=="
+                                    }
+                                },
+                                {
+                                    "@attributes": {
+                                        "Category": "YR",
+                                        "Amount": "NGN47360",
+                                        "Key": "qpW/C5TqWDKAZw82CAAAAA=="
+                                    }
+                                }
+                            ],
+                            "airFareCalc": "LOS X1 ABV Q8.70 86.00QOWVK USD94.70END",
+                            "airPassengerType": {
+                                "@attributes": {
+                                    "Code": "ADT"
+                                }
+                            },
+                            "airChangePenalty": {
+                                "@attributes": {
+                                    "PenaltyApplies": "Anytime"
+                                },
+                                "airAmount": "NGN32000"
+                            },
+                            "airCancelPenalty": {
+                                "@attributes": {
+                                    "PenaltyApplies": "Anytime"
+                                },
+                                "airAmount": "NGN32000"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

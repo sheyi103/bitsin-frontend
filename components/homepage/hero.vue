@@ -576,7 +576,13 @@
                   >
                     <div class="d-flex align-items-center justify-content-center">
                       <div class="px-4">
-                        <span>Search Flight</span>
+                        <span v-show="!isLoading">Search Flight</span>
+                        <span
+                v-show="isLoading"
+                class="spinner-grow spinner-grow-sm text-white"
+                role="status"
+              >
+              </span>
                       </div>
                       <div class="px-1">
                         <svg
@@ -774,6 +780,7 @@
 
 <script>
 import airportData from "@/json/airport.json";
+import apiResponse from "@/json/flightresponse.json";
 export default {
 
   data() {
@@ -803,6 +810,8 @@ export default {
       flighTrip: false,
       date_today: null,
       date_depature: null,
+      isLoading: false,
+      apiResponse: [],
     };
   },
   created() {
@@ -842,16 +851,23 @@ export default {
       };
     },
      searchFlightAvailability() {
+      // Set loading to true to show loader
+     this.isLoading = true;
       // Access form data from data properties
+
       const formData = {
-        // Travelers: this.Travelers,
+
+
+        departure_port: this.departurePort,
+        arrival_port: this.arrivalPort,
+        departure_date: this.formatDate(this.date_depature),
+        return_date: this.date_today ? this.formatDate(this.date_today) : null,
         adult: this.adult,
         children: this.children,
         infants: this.infant,
+        // Travelers: this.Travelers,
         // from: this.from,
         // to: this.to,
-        departure_port: this.departurePort,
-        arrival_port: this.arrivalPort,
         // isSearchActiveFrom: this.isSearchActiveFrom,
         // isSearchActiveTo: this.isSearchActiveTo,
         // flight: this.flight,
@@ -864,8 +880,7 @@ export default {
         // visibletype: this.visibletype,
         // triptype: this.triptype,
         // flighTrip: this.flighTrip,
-        return_date: this.formatDate(this.date_today),
-        date_depature: this.formatDate(this.date_depature)
+
       };
 
       // Perform further logic, such as sending the form data to an API
@@ -874,40 +889,43 @@ export default {
       // Example: Call a function to send form data to API
       this.sendFormDataToAPI(formData);
     },
-        async sendFormDataToAPI(formData) {
-      this.loader = true;
+ async sendFormDataToAPI(formData) {
 
       try {
-         const response = await this.$axios.$get("/user", this.login);
-        this.$toast.info('Logging in...', {
-          position: 'top-center',
-          duration: 3000,
-        })
-        await this.$auth.loginWith("local", {
-          data: {
-            email: this.login.email,
-            password: this.login.password,
-          },
-        });
-        alert("success");
-        // this.$toast.success('Login Successful', {
-        //   position: 'top-center',
-        //   duration: 2000,
-        // })
-        this.loader = false;
-        this.$router.push("/");
+        // const response = await this.$axios.$post("/flight/availability",formData);
+        // console.log("flight search: " ,response)
+
+        const response = apiResponse;
+
+
+
+
+        if (response.flights.SOAPBody.airLowFareSearchRsp){
+
+         console.log("Hero Component Successful response:", response);
+         this.$router.push({ name: 'flight-searchflight',params: { responseData: response } });
+        // this.$router.push('/flight-searchflight');
+          // Do something with the successful response
+        this.isLoading = false;
+
+        }else if(response.SOAPBody){
+          // message = response.SOAPBody.SOAPFault.faultstring;
+          console.log("hello world");
+          console.log("flight search failed: ",response.SOAPBody.SOAPFault.faultstring );
+           alert(response.SOAPBody.SOAPFault.faultstring);
+           this.isLoading = false;
+        }else if(response.code == 500){
+        alert("server unavailble!!", response.message);
+        }else{
+          alert("failed request");
+        }
       } catch (e) {
-        // this.error = e.response.data.message
-        console.log(e);
-        this.loader = false;
-        // this.$toast.error(
-        //   'Authentication Failed! email or password incorrect',
-        //   {
-        //     position: 'top-center',
-        //     duration: 2000,
-        //   }
-        // )
-        alert("failed");
+       console.error("Error:", e);
+       this.isLoading = false;
+        // Handle error
+      }finally {
+        // Set loading back to false after the request completes
+        this.isLoading = false;
       }
     },
     // switch to flight and hotel

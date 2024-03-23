@@ -746,7 +746,7 @@ input:focus {
 }
 /* hero background */
 .bghero {
-  background-image: url(@/assets/images/heroImage.png);
+  background-image: url(@/assets/images/HeroImage.png);
   /* height: 90vh !important; */
   background-size: cover !important;
   /* width: 200% !important; */

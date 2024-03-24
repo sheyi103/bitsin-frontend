@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/singleblog", {data:[{}],fetch:{},mutations:[]});

@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/visa-processing", {data:[{}],fetch:{},mutations:[]});

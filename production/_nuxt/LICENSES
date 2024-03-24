@@ -18,13 +18,6 @@
  */
 
 
-/**
-  * Hopper 0.3.4
-  * (c) 2019
-    * @license MIT
-    */
-
-
 /*!
  * clipboard.js v2.0.11
  * https://clipboardjs.com/
@@ -81,3 +74,10 @@
  */
 
 //! moment.js
+
+
+/**
+  * Hopper 0.3.4
+  * (c) 2019
+    * @license MIT
+    */

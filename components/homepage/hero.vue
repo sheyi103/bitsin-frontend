@@ -892,27 +892,27 @@ export default {
  async sendFormDataToAPI(formData) {
 
       try {
-        // const response = await this.$axios.$post("/flight/availability",formData);
-        // console.log("flight search: " ,response)
+        const response = await this.$axios.$post("/flight/availability",formData);
+        console.log("flight search: " ,response)
 
-        const response = apiResponse;
+        // const response = apiResponse;
 
 
 
 
         if (response.flights.SOAPBody.airLowFareSearchRsp){
 
-         console.log("Hero Component Successful response:", response);
+        //  console.log("Hero Component Successful response:", response);
          this.$router.push({ name: 'flight-searchflight',params: { responseData: response } });
         // this.$router.push('/flight-searchflight');
           // Do something with the successful response
         this.isLoading = false;
 
-        }else if(response.SOAPBody){
+        }else if(response.flights.SOAPBody.SOAPFault){
           // message = response.SOAPBody.SOAPFault.faultstring;
-          console.log("hello world");
-          console.log("flight search failed: ",response.SOAPBody.SOAPFault.faultstring );
-           alert(response.SOAPBody.SOAPFault.faultstring);
+          // console.log("hello world");
+          // console.log("flight search failed: ",response.flights.SOAPBody.SOAPFault.faultstring );
+           alert(response.flights.SOAPBody.SOAPFault.faultstring);
            this.isLoading = false;
         }else if(response.code == 500){
         alert("server unavailble!!", response.message);

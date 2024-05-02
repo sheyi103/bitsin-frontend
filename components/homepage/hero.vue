@@ -896,6 +896,7 @@ export default {
         console.log("flight search: " ,response)
 
         // const response = apiResponse;
+        // console.log("Hero flight search: " ,response)
 
 
 
@@ -903,7 +904,7 @@ export default {
         if (response.flights.SOAPBody.airLowFareSearchRsp){
 
         //  console.log("Hero Component Successful response:", response);
-         this.$router.push({ name: 'flight-searchflight',params: { responseData: response } });
+         this.$router.push({ name: 'flight-searchflight',params: { response: response } });
         // this.$router.push('/flight-searchflight');
           // Do something with the successful response
         this.isLoading = false;

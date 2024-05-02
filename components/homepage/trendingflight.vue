@@ -12,6 +12,8 @@
             deals, airline <br />
             specials and promotions.</span
           >
+
+
         </div>
         <!-- hotel ,flight, view more button -->
         <div class="d-flex align-items-center justify-content-between my-2">
@@ -41,16 +43,18 @@
         </div>
         <!-- available flight and hotel grid -->
         <div v-if="flight" class="row my-4">
+
+
+
           <div
-            v-for="(clicktrend, index) in mytrend"
-            :key="index"
+            v-for="(flight, index) in responseData" :key="index"
             class="col-lg-3 col-md-3 col-xl-3 col-xxl-3"
           >
             <!-- card -->
             <div class="position-relative notinmobile">
               <div class="">
                 <img
-                  :src="require(`@/assets/images/${clicktrend.image}`)"
+                  :src="require(`@/assets/images/Rectangle18.png`)"
                   alt=""
                   class="w-100"
                 />
@@ -61,17 +65,19 @@
               >
                 <div class="py-2">
                   <h4 style="height: 3vh" class="fw-bold">
-                    ₦{{ clicktrend.price }}
+                    ₦{{flight.totalPrice }}
                   </h4>
                   <div class="d-flex py-2 fw-bold fs-150 align-items-center">
                     <div>
-                      <span>{{ clicktrend.start }}</span>
+                      {{ flight.origin }}
+                      <span>{{ flight.departureTime}}</span>
                     </div>
                     <div class="px-1">
                       <span>-</span>
                     </div>
                     <div>
-                      <span>{{ clicktrend.end }}</span>
+                      {{ flight.destination }}
+                      <span>{{ flight.arrivalTime }}</span>
                     </div>
                   </div>
                 </div>
@@ -108,8 +114,8 @@
                     </svg>
                   </div>
                   <!-- book now -->
-                  <div class="bggreen white fw-bold fs-170 rounded-2 py-2 px-2">
-                    <span>BOOK NOW</span>
+                  <div class="bggreen white fw-bold fs-170 rounded-2 py-2 px-2" @click="booking">
+                    <span v-show="!isLoading">BOOK NOW</span>
                   </div>
                 </div>
               </div>
@@ -499,6 +505,12 @@ export default {
     Hooper,
     Slide,
   },
+  props: {
+    responseData: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
       mytrend: trend,
@@ -533,6 +545,30 @@ export default {
         this.flight = false
         this.hotel = true
       }
+    },
+      booking() {
+      // Set loading to true to show loader
+     this.isLoading = true;
+      // Access form data from data properties
+
+    try {
+       
+      
+        //  console.log("Hero Component Successful response:", response);
+         this.$router.push({ name: 'booking-enquiry' });
+        // this.$router.push('/flight-searchflight');
+          // Do something with the successful response
+        this.isLoading = false;
+
+      } catch (e) {
+       console.error("Error:", e);
+       this.isLoading = false;
+        // Handle error
+      }finally {
+        // Set loading back to false after the request completes
+        this.isLoading = false;
+      }
+     
     },
   },
 }

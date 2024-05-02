@@ -2,8 +2,8 @@
 <div>
     <div class="">
   <div>
-    <p>{{ responseData }}</p>
-        <Trending :responseData="responseData" />
+    <!-- <p>{{ responseData }}</p> -->
+        <Trending  :responseData="responseData"/>
       </div>
     </div>
 </div>
@@ -13,44 +13,59 @@
 <script>
 import Trending from '@/components/homepage/trendingflight.vue'
 export default {
-  // props: ['responseData'],
+
   components: {
 
     Trending
   },
   data() {
     return {
-      responseData: [] // Initialize responseData with an empty array
+      response: [] // Initialize responseData with an empty array
     }
   },
   computed: {
     responseData() {
       // Access the responseData from $route.params
 
-    const apiResponseData = this.$route.params.responseData;
+    const apiResponseData = this.$route.params.response;
+    console.log("search apiResponseData ", apiResponseData);
 
 
 // Extract flights information
-const flights = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirSegmentList.airAirSegment;
+const flightsArray = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirSegmentList.airAirSegment;
+// console.log("search flight ",flights);
+const flights = Object.values(flightsArray);
 
 // Extract fare information
 const fares = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airFareInfoList.airFareInfo;
 // Extract pricing solutions
-const pricingSolutions = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirPricingSolution;
+const pricingSolutionsObject = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirPricingSolution;
+const pricingSolutions = Object.values(pricingSolutionsObject);
+
 // Create an array to store formatted flight details
 const formattedFlights = [];
+// console.log(formattedFlights);
 
 /// Iterate over each flight and match it with fare information and pricing solutions
+console.log("total number of flights returned",flights.length);
+
 flights.forEach(flight => {
 
   // Find corresponding pricing solution
-  const pricingSolution = pricingSolutions.find(solution =>
-    solution.airJourney.airAirSegmentRef["@attributes"].Key === flight["@attributes"].Key
+  // const pricingSolution = pricingSolutions.find(solution =>
+  //   solution["@attributes"].Key === flight["@attributes"].Key
 
-  );
+  // );
+  const pricingSolution = pricingSolutions[0];
+  // console.log("Pricing Solutions ",pricingSolution.TotalPrice);
+
+ console.log("flight Response: ",flight);
 //  console.log("pricingSolution Response: ",pricingSolution);
   // Format flight details
-  const formattedFlight = {
+
+  if(flight["@attributes"]){
+
+    const formattedFlight = {
     origin: flight["@attributes"].Origin,
     destination: flight["@attributes"].Destination,
     departureTime: new Date(flight["@attributes"].DepartureTime),
@@ -62,8 +77,30 @@ flights.forEach(flight => {
     totalFare: pricingSolution.airAirPricingInfo["@attributes"].TotalPrice
   };
 
-  // Push the formatted flight to the array
   formattedFlights.push(formattedFlight);
+  }else{
+   const formattedFlight = {
+    origin: flight.Origin,
+    destination: flight.Destination,
+    departureTime: new Date(flight.DepartureTime),
+    arrivalTime: new Date(flight.ArrivalTime),
+    flightTime: parseInt(flight.FlightTime),
+    equipment: flight.Equipment,
+
+    totalPrice: pricingSolution.TotalPrice,
+    totalFare: pricingSolution.TotalPrice
+    
+  };
+  formattedFlights.push(formattedFlight);
+  }
+
+  
+ 
+  
+  
+
+  // Push the formatted flight to the array
+  
 });
 
 // Sort the flights based on departure time

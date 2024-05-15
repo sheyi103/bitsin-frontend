@@ -1095,7 +1095,7 @@ export default {
     },
     makePayment() {
       let self = this;
-      this.$launchFlutterwave({
+      this.$launch({
         tx_ref: 589876789,
         amount: 85747,
         currency: "NGN",

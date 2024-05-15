@@ -1,13 +1,12 @@
 <template>
-<div>
-    <div class="">
   <div>
-    <!-- <p>{{ responseData }}</p> -->
-        <Trending  :responseData="responseData"/>
+    <div class="">
+      <div>
+        <!-- <p>{{ responseData }}</p> -->
+        <Trending :responseData="responseData" />
       </div>
     </div>
-</div>
-
+  </div>
 </template>
 
 <script>
@@ -26,95 +25,88 @@ export default {
   computed: {
     responseData() {
       // Access the responseData from $route.params
+      const apiResponseData = this.$route.params.response;
+      // console.log("search apiResponseData ", apiResponseData);
 
-    const apiResponseData = this.$route.params.response;
-    console.log("search apiResponseData ", apiResponseData);
+      // Extract flights information
+      const flights = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirSegmentList.airAirSegment;
 
 
-// Extract flights information
-const flightsArray = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirSegmentList.airAirSegment;
-// console.log("search flight ",flights);
-const flights = Object.values(flightsArray);
+      // Extract fare information
+      const fares = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airFareInfoList;
+      // Extract pricing solutions
+      const pricingSolutions = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirPricingSolution;
 
-// Extract fare information
-const fares = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airFareInfoList.airFareInfo;
-// Extract pricing solutions
-const pricingSolutionsObject = apiResponseData.flights.SOAPBody.airLowFareSearchRsp.airAirPricingSolution;
-const pricingSolutions = Object.values(pricingSolutionsObject);
+      // Create an array to store formatted flight details
+      const formattedFlights = [];
 
-// Create an array to store formatted flight details
-const formattedFlights = [];
-// console.log(formattedFlights);
+      if (Array.isArray(flights)) {
+        // If there are multiple flight segments
+        flights.forEach(flight => {
+          // Find corresponding pricing solution
+            // const pricingSolution = pricingSolutions.find(solution => solution["@attributes"].Key === flight["@attributes"].Key);
+            const pricingSolution = pricingSolutions.find(solution => solution.airJourney.airAirSegmentRef["@attributes"].Key === flight["@attributes"].Key);
 
-/// Iterate over each flight and match it with fare information and pricing solutions
-console.log("total number of flights returned",flights.length);
+          // console.log("Multiple flights Response: ", flight);
+          // console.log("Pricing Response: ", pricingSolution);
 
-flights.forEach(flight => {
+          // Format flight details
+          const formattedFlight = {
+            origin: flight["@attributes"].Origin,
+            destination: flight["@attributes"].Destination,
+            departureTime: new Date(flight["@attributes"].DepartureTime),
+            arrivalTime: new Date(flight["@attributes"].ArrivalTime),
+            flightTime: parseInt(flight["@attributes"].FlightTime),
+            equipment: flight["@attributes"].Equipment,
+            totalPrice:  pricingSolution ? pricingSolution["@attributes"].TotalPrice.substring(3) : null,
 
-  // Find corresponding pricing solution
-  // const pricingSolution = pricingSolutions.find(solution =>
-  //   solution["@attributes"].Key === flight["@attributes"].Key
+            // totalPrice: pricingSolution["@attributes"].TotalPrice,
+            // totalFare: pricingSolution["@attributes"].TotalPrice // Adjust this line if necessary
+          };
 
-  // );
-  const pricingSolution = pricingSolutions[0];
-  // console.log("Pricing Solutions ",pricingSolution.TotalPrice);
+          // Push the formatted flight to the array
+          formattedFlights.push(formattedFlight);
+        });
+      } else if (flights) {
+        // If there is only one flight segment
+        const flight = flights;
 
- console.log("flight Response: ",flight);
-//  console.log("pricingSolution Response: ",pricingSolution);
-  // Format flight details
+        // Find corresponding pricing solution
+        // const pricingSolution = pricingSolutions.find(solution => solution["@attributes"].Key === flight["@attributes"].Key);
 
-  if(flight["@attributes"]){
 
-    const formattedFlight = {
-    origin: flight["@attributes"].Origin,
-    destination: flight["@attributes"].Destination,
-    departureTime: new Date(flight["@attributes"].DepartureTime),
-    arrivalTime: new Date(flight["@attributes"].ArrivalTime),
-    flightTime: parseInt(flight["@attributes"].FlightTime),
-    equipment: flight["@attributes"].Equipment,
 
-    totalPrice: pricingSolution["@attributes"].TotalPrice,
-    totalFare: pricingSolution.airAirPricingInfo["@attributes"].TotalPrice
-  };
 
-  formattedFlights.push(formattedFlight);
-  }else{
-   const formattedFlight = {
-    origin: flight.Origin,
-    destination: flight.Destination,
-    departureTime: new Date(flight.DepartureTime),
-    arrivalTime: new Date(flight.ArrivalTime),
-    flightTime: parseInt(flight.FlightTime),
-    equipment: flight.Equipment,
+        console.log("Single flight Response: ", flight);
 
-    totalPrice: pricingSolution.TotalPrice,
-    totalFare: pricingSolution.TotalPrice
-    
-  };
-  formattedFlights.push(formattedFlight);
-  }
+        // Format flight details
+        const formattedFlight = {
+          origin: flight["@attributes"].Origin,
+          destination: flight["@attributes"].Destination,
+          departureTime: new Date(flight["@attributes"].DepartureTime),
+          arrivalTime: new Date(flight["@attributes"].ArrivalTime),
+          flightTime: parseInt(flight["@attributes"].FlightTime),
+          equipment: flight["@attributes"].Equipment,
+           totalPrice: pricingSolutions ? pricingSolutions["@attributes"].TotalPrice.substring(3) : null,
 
-  
- 
-  
-  
+          // totalPrice: pricingSolution["@attributes"].TotalPrice,
+          // totalFare: pricingSolution["@attributes"].TotalPrice // Adjust this line if necessary
+        };
 
-  // Push the formatted flight to the array
-  
-});
+        // Push the formatted flight to the array
+        formattedFlights.push(formattedFlight);
+      }
 
-// Sort the flights based on departure time
-formattedFlights.sort((a, b) => a.departureTime - b.departureTime);
+      // Sort the flights based on departure time
+      formattedFlights.sort((a, b) => a.departureTime - b.departureTime);
 
-// Now, formattedFlights contains the flights sorted by departure time and formatted with fare information
-// console.log(formattedFlights);
+      // Now, formattedFlights contains the flights sorted by departure time and formatted with fare information
+      console.log(formattedFlights);
 
       return formattedFlights;
     }
-  }
-}
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

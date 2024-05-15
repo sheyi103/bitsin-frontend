@@ -884,7 +884,7 @@ export default {
       };
 
       // Perform further logic, such as sending the form data to an API
-      console.log('Form Data:', formData);
+      // console.log('Form Data:', formData);
 
       // Example: Call a function to send form data to API
       this.sendFormDataToAPI(formData);
@@ -893,7 +893,7 @@ export default {
 
       try {
         const response = await this.$axios.$post("/flight/availability",formData);
-        console.log("flight search: " ,response)
+        // console.log("flight search: " ,response)
 
         // const response = apiResponse;
         // console.log("Hero flight search: " ,response)
@@ -915,7 +915,7 @@ export default {
           // console.log("flight search failed: ",response.flights.SOAPBody.SOAPFault.faultstring );
            alert(response.flights.SOAPBody.SOAPFault.faultstring);
            this.isLoading = false;
-        }else if(response.code == 500){
+        }else if(response.code === 500){
         alert("server unavailble!!", response.message);
         }else{
           alert("failed request");
@@ -957,7 +957,7 @@ export default {
 }},
  selectAirportFrom(airport) {
       // Handle selection of the airport
-      this.from = airport.name
+      this.from = airport.iata
       this.departurePort =airport.iata
        this.isSearchActiveFrom = false;;
       // You can perform any further actions here, such as updating state or navigating
@@ -965,7 +965,7 @@ export default {
   ,
   selectAirportTo(airport) {
       // Handle selection of the airport
-      this.to = airport.name
+      this.to = airport.iata
       this.arrivalPort = airport.iata
        this.isSearchActiveTo = false;;
       // You can perform any further actions here, such as updating state or navigating

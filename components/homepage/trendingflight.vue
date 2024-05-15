@@ -65,7 +65,7 @@
               >
                 <div class="py-2">
                   <h4 style="height: 3vh" class="fw-bold">
-                    ₦{{flight.totalPrice }}
+                    ₦ {{flight.totalPrice }}
                   </h4>
                   <div class="d-flex py-2 fw-bold fs-150 align-items-center">
                     <div>
@@ -73,7 +73,7 @@
                       <span>{{ flight.departureTime}}</span>
                     </div>
                     <div class="px-1">
-                      <span>-</span>
+                      <span>--</span>
                     </div>
                     <div>
                       {{ flight.destination }}
@@ -552,8 +552,8 @@ export default {
       // Access form data from data properties
 
     try {
-       
-      
+
+
         //  console.log("Hero Component Successful response:", response);
          this.$router.push({ name: 'booking-enquiry' });
         // this.$router.push('/flight-searchflight');
@@ -568,7 +568,7 @@ export default {
         // Set loading back to false after the request completes
         this.isLoading = false;
       }
-     
+
     },
   },
 }

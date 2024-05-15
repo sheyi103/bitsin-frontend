@@ -41,8 +41,9 @@ export default {
     // '@/plugins/view-ui',
     { src: '~/plugins/vue-datepicker', ssr: false },
     { src: '~plugins/oruga.js', ssr: false },
-    { src: "@/plugins/flutterwave", ssr: false },
+    { src: "~/plugins/flutterwave", ssr: false },
     { src: '~/plugins/vue-cookies', ssr: false },
+    { src: "~/plugins/vue-paystack", ssr: false },
 
   ],
 
@@ -71,6 +72,7 @@ export default {
     '@nuxtjs/pwa',
     "@nuxtjs/toast",
     'nuxt-clipboard',
+    'nuxt-paystack',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

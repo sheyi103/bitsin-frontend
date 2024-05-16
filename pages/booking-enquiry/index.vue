@@ -97,7 +97,7 @@
                   placeholder="type your message"></textarea>
               </div>
               <div role="button" @click="sendRequest" class="bggreen rounded-1 w-100 p-2 my-2 white text-center">
-                <span v-show="!isLoading" class="fw-bold fs-200">Send Request</span>
+                <span v-show="!isLoading" class="fw-bold fs-200">Make Payment</span>
                 <span v-show="isLoading" class="spinner-border spinner-border-sm text-white" role="status">
                 </span>
               </div>

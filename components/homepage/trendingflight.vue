@@ -70,16 +70,38 @@
                   <div class="d-flex py-2 fw-bold fs-150 align-items-center">
                     <div>
                       {{ flight.origin }}
-                      <span>{{ flight.departureTime}}</span>
+                      <!-- <span>{{ flight.departureTime}}</span> -->
+
                     </div>
-                    <div class="px-1">
-                      <span>--</span>
+
+                    <div class="px-3">
+                      <span> - </span>
                     </div>
                     <div>
                       {{ flight.destination }}
-                      <span>{{ flight.arrivalTime }}</span>
+                      <!-- <span>{{ flight.arrivalTime }}</span> -->
+
                     </div>
+
                   </div>
+                   <div class="d-flex  fw-bold fs-150 align-items-center">
+                    <div>
+                      {{ flight.departureTime }}
+                      <span>{{ flight.departureDate}}</span>
+
+                    </div>
+
+                    <div class="px-2">
+                      <span> - </span>
+                    </div>
+                    <div>
+                      {{ flight.arrivalTime }}
+                      <span>{{ flight.arrivalDate }}</span>
+
+                    </div>
+
+                  </div>
+                 
                 </div>
                 <!-- book now button -->
                 <div
